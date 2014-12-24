@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-fat32/issues"
   },
-  "homepage": "https://github.com/jhermsmeier/node-fat32"
+  "homepage": "https://github.com/jhermsmeier/node-fat32",
+  "dependencies": {
+    "bloodline": "^1.0.0"
+  }
 }
