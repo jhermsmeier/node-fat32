@@ -19,8 +19,13 @@
   ],
   "main": "lib/fat32",
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de/)",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "bloodline": "~1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.3",
+    "ramdisk": "~0.3.0"
+  },
   "scripts": {
     "test": "mocha"
   },
