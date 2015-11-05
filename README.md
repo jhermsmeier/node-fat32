@@ -1,9 +1,9 @@
 # FAT32
-[![npm](http://img.shields.io/npm/v/fat32.svg?style=flat)](https://npmjs.org/fat32)
-[![npm downloads](http://img.shields.io/npm/dm/fat32.svg?style=flat)](https://npmjs.org/fat32)
-[![build status](http://img.shields.io/travis/jhermsmeier/node-fat32.svg?style=flat)](https://travis-ci.org/jhermsmeier/node-fat32)
+[![npm](https://img.shields.io/npm/v/fat32.svg?style=flat-square)](https://npmjs.com/fat32)
+[![npm downloads](https://img.shields.io/npm/dm/fat32.svg?style=flat-square)](https://npmjs.com/fat32)
+[![build status](https://img.shields.io/travis/jhermsmeier/node-fat32.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-fat32)
 
-## Install via [npm](https://npmjs.org)
+## Install via [npm](https://npmjs.com)
 
 ```sh
 $ npm install fat32
