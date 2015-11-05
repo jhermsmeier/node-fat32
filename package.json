@@ -2,39 +2,37 @@
   "name": "fat32",
   "version": "0.0.0",
   "description": "FAT32 file system driver",
-  "main": "lib/fat32",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "node node_modules/mocha/bin/mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jhermsmeier/node-fat32.git"
-  },
+  "license": "MIT",
   "keywords": [
     "fat",
     "fat32",
     "file",
     "allocation",
     "table",
-    "filesystem"
+    "filesystem",
+    "file",
+    "system",
+    "fs",
+    "driver",
+    "volume",
+    "mount"
   ],
-  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com>",
-  "license": "MIT",
+  "main": "lib/fat32",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de/)",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "homepage": "https://github.com/jhermsmeier/node-fat32",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhermsmeier/node-fat32.git"
+  },
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-fat32/issues"
   },
-  "homepage": "https://github.com/jhermsmeier/node-fat32",
-  "dependencies": {
-    "bloodline": "^1.0.0"
-  },
-  "devDependencies": {
-    "mocha": "^2.1.0",
-    "ramdisk": "^0.2.0"
-  },
-  "peerDependencies": {
-    "disk": "*"
+  "directories": {
+    "test": "test"
   }
 }
