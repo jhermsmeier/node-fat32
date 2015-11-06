@@ -6,13 +6,18 @@ describe( 'FAT32', function() {
   
   describe( 'Volume Boot Record', function() {
     
-    it( 'should be able to determine if it\'s the right one', function() {
-      new FAT32.test( 'Some test boot sector' )
+    it( '512 byte min size', function() {
+      assert.throws( function() {
+        var vbr = new FAT32.Volume.BootRecord()
+        var buffer = new Buffer( 500 )
+        vbr.parse( buffer )
+      })
     })
     
-    it( 'should be able to parse it', function() {
+    it( 'parse anything', function() {
       var vbr = new FAT32.Volume.BootRecord()
-      vbr.parse( 'Some test boot sector' )
+      var buffer = new Buffer( 512 )
+      vbr.parse( buffer )
     })
     
   })
