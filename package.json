@@ -2,6 +2,7 @@
   "name": "fat32",
   "version": "0.0.0",
   "description": "FAT32 file system driver",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
   "license": "MIT",
   "keywords": [
     "fat",
@@ -17,17 +18,13 @@
     "volume",
     "mount"
   ],
-  "main": "lib/fat32",
-  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de/)",
+  "main": "lib/fat32.js",
   "dependencies": {
     "bloodline": "~1.0.0"
   },
   "devDependencies": {
-    "mocha": "~2.3.3",
-    "ramdisk": "~0.3.0"
-  },
-  "scripts": {
-    "test": "mocha"
+    "mocha": "~2.5.3",
+    "ramdisk": "~0.3.1"
   },
   "homepage": "https://github.com/jhermsmeier/node-fat32",
   "repository": {
@@ -39,5 +36,8 @@
   },
   "directories": {
     "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
