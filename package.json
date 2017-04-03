@@ -20,11 +20,11 @@
   ],
   "main": "lib/fat32.js",
   "dependencies": {
-    "bloodline": "~1.0.0"
+    "bloodline": "~1.0.1"
   },
   "devDependencies": {
-    "mocha": "~2.5.3",
-    "ramdisk": "~0.3.1"
+    "blockdevice": "^0.6.0",
+    "mocha": "^3.2.0"
   },
   "homepage": "https://github.com/jhermsmeier/node-fat32",
   "repository": {
@@ -38,6 +38,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "benchmark": "nanobench benchmark/*.js"
   }
 }
