@@ -38,7 +38,6 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
-    "benchmark": "nanobench benchmark/*.js"
+    "test": "mocha"
   }
 }

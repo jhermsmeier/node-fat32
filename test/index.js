@@ -1,10 +1,9 @@
-var FAT = require( '../' )
-var BlockDevice = require( 'blockdevice' )
-var RamDisk = require( 'ramdisk' )
 var assert = require( 'assert' )
 var fs = require( 'fs' )
 var path = require( 'path' )
 var inspect = require( './inspect' )
+var FAT = require( '../' )
+var BlockDevice = require( 'blockdevice' )
 
 var images = [ 'fat12', 'fat16', 'fat32' ]
 
@@ -23,7 +22,7 @@ images.forEach( function( image ) {
         .once( 'finish', done )
     })
 
-    before( 'device', function( done ) {
+    before( 'device.open()', function( done ) {
 
       device = new BlockDevice({
         path: filename,
@@ -35,22 +34,26 @@ images.forEach( function( image ) {
 
     })
 
-    specify( 'create volume', function() {
-      volume = new FAT.Volume()
-    })
+    context( 'Volume', function() {
 
-    specify( 'mount device -> volume', function( done ) {
-      volume.mount( device, {}, function( error ) {
-        console.log( error || inspect( volume ) )
-        done( error )
+      specify( 'new Volume()', function() {
+        volume = new FAT.Volume()
       })
+
+      specify( 'volume.mount(device)', function( done ) {
+        volume.mount( device, {}, function( error ) {
+          console.log( error || inspect( volume ) )
+          done( error )
+        })
+      })
+
+      specify( 'volume.unmount()', function( done ) {
+        volume.unmount( done )
+      })
+
     })
 
-    specify( 'unmount', function( done ) {
-      volume.unmount( done )
-    })
-
-    after( 'device:close', function( done ) {
+    after( 'device.close()', function( done ) {
       device.close( done )
     })
 
