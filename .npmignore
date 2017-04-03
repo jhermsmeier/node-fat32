@@ -1,2 +1,9 @@
 .*
+*.log
+*.md
+
+benchmark
+doc
+example
 test
+scripts
