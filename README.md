@@ -1,7 +1,7 @@
 # FAT32 File System
-[![npm](https://img.shields.io/npm/v/node-fat32.svg?style=flat-square)](https://npmjs.com/package/node-fat32)
-[![npm license](https://img.shields.io/npm/l/node-fat32.svg?style=flat-square)](https://npmjs.com/package/node-fat32)
-[![npm downloads](https://img.shields.io/npm/dm/node-fat32.svg?style=flat-square)](https://npmjs.com/package/node-fat32)
+[![npm](https://img.shields.io/npm/v/fat32.svg?style=flat-square)](https://npmjs.com/package/fat32)
+[![npm license](https://img.shields.io/npm/l/fat32.svg?style=flat-square)](https://npmjs.com/package/fat32)
+[![npm downloads](https://img.shields.io/npm/dm/fat32.svg?style=flat-square)](https://npmjs.com/package/fat32)
 [![build status](https://img.shields.io/travis/jhermsmeier/node-fat32.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-fat32)
 
 FAT12/16/32 file system driver
