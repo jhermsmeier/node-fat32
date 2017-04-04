@@ -79,7 +79,7 @@ Volume {
   vbr: VBR {
     jmp: <Buffer eb 58 90>,
     oemName: 'mkfs.fat',
-    bytesPerSector: 512,
+    sectorSize: 512,
     sectorsPerCluster: 1,
     reservedSectors: 32,
     numberOfFATs: 2,
