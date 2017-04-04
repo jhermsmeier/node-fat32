@@ -16,8 +16,8 @@ $ npm install --save fat32
 
 ### Related Modules
 
-- [BlockDevice](https://github.com/jhermsmeier/node-blockdevice)
-- [Disk](https://github.com/jhermsmeier/node-disk)
+- [BlockDevice](https://github.com/jhermsmeier/node-blockdevice) - reads from & writes to block devices, or treats files as block devices
+- [Disk](https://github.com/jhermsmeier/node-disk) - handles a formatted block device (reads the MBR and GPT, creates bounded partitions with BlockDevice APIs)
 
 ### Mounting a partition from a block device
 
@@ -36,7 +36,7 @@ var volume = new FAT.Volume()
 disk.open(( error ) => {
 
   // For purposes of demonstration, error handling will
-  // not tended to in this example, but should of course
+  // not be tended to in this example, but should of course
   // be implemented in real-world use cases
   if( error ) return handleError( error )
 
