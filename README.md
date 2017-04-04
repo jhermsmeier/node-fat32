@@ -12,6 +12,15 @@ FAT12/16/32 file system driver
 $ npm install --save fat32
 ```
 
+## Features
+
+- [x] Reading volume boot & information sector
+- [ ] Reading of clusters and cluster chains
+- [ ] Write support
+- [ ] Node `fs` compatible API
+- [ ] Defragmentation
+- [ ] Transactions (if multiple FATs are present)
+
 ## Usage
 
 ### Related Modules
