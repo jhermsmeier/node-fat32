@@ -11,7 +11,7 @@ images.forEach( function( image ) {
 
   describe( image.toUpperCase(), function() {
 
-    var filename = path.join( __dirname, 'data', image + '.bin' )
+    var filename = path.join( __dirname, 'data', image + '.img' )
     var device = null
     var volume = null
 
@@ -45,6 +45,28 @@ images.forEach( function( image ) {
           console.log( error || inspect( volume ) )
           done( error )
         })
+      })
+
+      context( 'volume.fat', function() {
+
+        specify( '.getCluster(0)', function() {
+          console.log( inspect( volume.fat.getCluster(0) ) )
+        })
+
+        specify( '.getCluster(1)', function() {
+          console.log( inspect( volume.fat.getCluster(1) ) )
+        })
+
+        specify( '.getCluster(rootClusterNo)', function() {
+          var rootClusterNo = volume.vbr.rootClusterSector
+          console.log( inspect( volume.fat.getCluster(rootClusterNo) ) )
+        })
+
+        specify( '.getClusterChain(rootClusterNo)', function() {
+          var rootClusterNo = volume.vbr.rootClusterSector
+          console.log( inspect( volume.fat.getClusterChain(rootClusterNo) ) )
+        })
+
       })
 
       specify( 'volume.unmount()', function( done ) {

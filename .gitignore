@@ -1,4 +1,4 @@
 .*
 *.log
-test/data/*.bin
+test/data/*.img
 node_modules
