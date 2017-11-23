@@ -25,8 +25,14 @@ $ npm install --save fat32
 
 ### Related Modules
 
-- [BlockDevice](https://github.com/jhermsmeier/node-blockdevice) - reads from & writes to block devices, or treats files as block devices
-- [Disk](https://github.com/jhermsmeier/node-disk) - handles a formatted block device (reads the MBR and GPT, creates bounded partitions with BlockDevice APIs)
+- [ExFAT](https://github.com/jhermsmeier/node-exfat) - ExFAT file system driver
+- [NTFS](https://github.com/jhermsmeier/node-ntfs) - NTFS file system driver
+- [HFS+](https://github.com/jhermsmeier/node-hfsx) - HFS+ file system driver
+- [Ext4](https://github.com/jhermsmeier/node-ext4) - Ext4, Ext3, Ext2 file system driver
+- [MBR](https://github.com/jhermsmeier/node-mbr) - Master Boot Record (MBR)
+- [GPT](https://github.com/jhermsmeier/node-gpt) - GUID Partition Table (GPT)
+- [BlockDevice](https://github.com/jhermsmeier/node-blockdevice) - Reads from & writes to block devices, or treats files as block devices
+- [Disk](https://github.com/jhermsmeier/node-disk) - Handles a formatted block device (reads the MBR and GPT, creates bounded partitions with BlockDevice APIs)
 
 ### Mounting a partition from a block device
 
@@ -132,3 +138,7 @@ Volume {
   }]
 }
 ```
+
+## References
+
+- [Wikipedia / Design of the FAT file system](https://en.wikipedia.org/wiki/Design_of_the_FAT_file_system)
