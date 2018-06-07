@@ -26,7 +26,7 @@
     "blockdevice": "^0.6.0",
     "disk": "^0.7.1",
     "mbr": "^1.1.3",
-    "mocha": "^3.5.3",
+    "mocha": "^5.2.0",
     "nanobench": "^2.1.1"
   },
   "homepage": "https://github.com/jhermsmeier/node-fat32",
