@@ -19,9 +19,7 @@
     "mount"
   ],
   "main": "lib/fat32.js",
-  "dependencies": {
-    "bloodline": "~1.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "blockdevice": "^0.6.0",
     "disk": "^0.7.1",
