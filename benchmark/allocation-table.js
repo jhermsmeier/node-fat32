@@ -1,7 +1,7 @@
 var bench = require( 'nanobench' )
 var FAT = require( '..' )
 
-var ITERATIONS = 1000
+var ITERATIONS = 1000000
 
 // Just a convenience to keep the FAT buffers
 // readable to the human eye
