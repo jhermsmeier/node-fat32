@@ -67,6 +67,11 @@ images.forEach( function( image ) {
           console.log( inspect( volume.fat.getClusterChain(rootClusterNo) ) )
         })
 
+        specify( '.getUsage()', function() {
+          var stats = volume.fat.getUsage()
+          console.log( inspect( stats ) )
+        })
+
       })
 
       specify( 'volume.unmount()', function( done ) {
