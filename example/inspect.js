@@ -1,39 +1,35 @@
 var fs = require( 'fs' )
 var path = require( 'path' )
-var BlockDevice = require( 'blockdevice' )
 var MBR = require( 'mbr' )
 var FAT = require( '..' )
 var inspect = require( '../test/inspect' )
 
 var filename = path.resolve( process.cwd(), process.argv.slice(2).shift() )
 
-var mbr = null
+var fd = fs.openSync( filename, 'r' )
+var buffer = Buffer.allocUnsafe( 512 )
+
+fs.readSync( fd, buffer, 0, buffer.length, 0 )
+fs.closeSync( fd )
+
+var mbr = MBR.parse( buffer )
+var start = mbr.partitions[0].firstLBA * 512
+var end = mbr.partitions[0].lastLBA * 512
+
 var volume = new FAT.Volume({
-  bits: 16,
+  bits: 32,
   readOnly: false,
-})
-
-var device = new BlockDevice({
   path: filename,
-  blockSize: 512,
-  size: fs.statSync( filename ).size,
+  start: start,
+  end: end,
 })
 
-device.open(( error ) => {
-
-  device.readBlocks( 0, 1, ( error, buffer ) => {
-    mbr = MBR.parse( buffer )
-    console.log( inspect( mbr ) )
-    var partition = mbr.partitions[0]
-    volume.mount( device.partition({
-      firstLBA: partition.firstLBA,
-      lastLBA: partition.lastLBA,
-    }), {}, ( error ) => {
-      console.log( error || inspect( volume ) )
-      device.close(( error ) => {
-        console.log('Device handle closed', error || 'OK')
-      })
+volume.open(( error ) => {
+  console.log( error || inspect( volume ) )
+  volume.readDir( 5, ( error, directory ) => {
+    console.log( inspect( directory ) )
+    volume.close(( error ) => {
+      console.log( 'Volume closed', error || 'OK' )
     })
   })
-
 })
