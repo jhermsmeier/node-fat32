@@ -19,6 +19,10 @@
     "mount"
   ],
   "main": "lib/fat32.js",
+  "scripts": {
+    "test": "mocha",
+    "benchmark": "nanobench benchmark/*.js"
+  },
   "dependencies": {},
   "devDependencies": {
     "mbr": "^1.1.3",
@@ -33,11 +37,7 @@
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-fat32/issues"
   },
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "mocha",
-    "benchmark": "nanobench benchmark/*.js"
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
