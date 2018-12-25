@@ -26,7 +26,7 @@ var volume = new FAT.Volume({
 
 volume.open(( error ) => {
   console.log( error || inspect( volume ) )
-  volume.readDir( 5, ( error, directory ) => {
+  volume.readDir( volume.vbr.rootDirCluster, ( error, directory ) => {
     console.log( inspect( directory ) )
     volume.close(( error ) => {
       console.log( 'Volume closed', error || 'OK' )
