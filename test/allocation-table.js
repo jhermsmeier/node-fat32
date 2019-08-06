@@ -60,6 +60,12 @@ describe( 'Allocation Table', function() {
       console.log( inspect( chain ) )
     })
 
+    specify( '.getUsage()', function() {
+      var stats = table.getUsage()
+      assert.deepEqual( stats, { total: 32, used: 27, free: 5 })
+      console.log( 'Usage:', inspect( stats ) )
+    })
+
   })
 
   describe( 'FAT16', function() {
@@ -100,6 +106,12 @@ describe( 'Allocation Table', function() {
       var chain = table.getClusterChain(11)
       assert.equal( chain.length, 7, 'Unexpected chain length' )
       console.log( inspect( chain ) )
+    })
+
+    specify( '.getUsage()', function() {
+      var stats = table.getUsage()
+      assert.deepEqual( stats, { total: 32, used: 27, free: 5 })
+      console.log( 'Usage:', inspect( stats ) )
     })
 
   })
@@ -154,6 +166,12 @@ describe( 'Allocation Table', function() {
       var chain = table.getClusterChain(11)
       assert.equal( chain.length, 7, 'Unexpected chain length' )
       console.log( inspect( chain ) )
+    })
+
+    specify( '.getUsage()', function() {
+      var stats = table.getUsage()
+      assert.deepEqual( stats, { total: 32, used: 27, free: 5 })
+      console.log( 'Usage:', inspect( stats ) )
     })
 
   })

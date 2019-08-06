@@ -3,7 +3,6 @@ var fs = require( 'fs' )
 var path = require( 'path' )
 var inspect = require( './inspect' )
 var FAT = require( '../' )
-var BlockDevice = require( 'blockdevice' )
 
 var images = [ 'fat12', 'fat16', 'fat32' ]
 
@@ -22,26 +21,14 @@ images.forEach( function( image ) {
         .once( 'finish', done )
     })
 
-    before( 'device.open()', function( done ) {
-
-      device = new BlockDevice({
-        path: filename,
-        blockSize: 512,
-        size: fs.statSync( filename ).size,
-      })
-
-      device.open( done )
-
-    })
-
     context( 'Volume', function() {
 
       specify( 'new Volume()', function() {
-        volume = new FAT.Volume()
+        volume = new FAT.Volume({ path: filename })
       })
 
-      specify( 'volume.mount(device)', function( done ) {
-        volume.mount( device, {}, function( error ) {
+      specify( 'volume.open()', function( done ) {
+        volume.open( function( error ) {
           console.log( error || inspect( volume ) )
           done( error )
         })
@@ -58,25 +45,26 @@ images.forEach( function( image ) {
         })
 
         specify( '.getCluster(rootClusterNo)', function() {
-          var rootClusterNo = volume.vbr.rootClusterSector
+          var rootClusterNo = volume.vbr.rootDirCluster
           console.log( inspect( volume.fat.getCluster(rootClusterNo) ) )
         })
 
         specify( '.getClusterChain(rootClusterNo)', function() {
-          var rootClusterNo = volume.vbr.rootClusterSector
+          var rootClusterNo = volume.vbr.rootDirCluster
           console.log( inspect( volume.fat.getClusterChain(rootClusterNo) ) )
+        })
+
+        specify( '.getUsage()', function() {
+          var stats = volume.fat.getUsage()
+          console.log( inspect( stats ) )
         })
 
       })
 
-      specify( 'volume.unmount()', function( done ) {
-        volume.unmount( done )
+      after( 'volume.close()', function( done ) {
+        volume.close( done )
       })
 
-    })
-
-    after( 'device.close()', function( done ) {
-      device.close( done )
     })
 
   })
