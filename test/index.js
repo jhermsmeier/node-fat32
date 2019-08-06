@@ -61,7 +61,7 @@ images.forEach( function( image ) {
 
       })
 
-      specify( 'volume.close()', function( done ) {
+      after( 'volume.close()', function( done ) {
         volume.close( done )
       })
 
